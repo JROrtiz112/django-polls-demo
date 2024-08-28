@@ -1,0 +1,10 @@
+{% block content %}
+  <form method="POST" action="{% url 'polls:login' %}">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter Your Username">
+    <input type="password" name="password" placeholder="Enter Your Password">
+    <input type="submit" value="login">
+    <input type="hidden" name="next" value="{{ next }}">
+  </form>
+
+{% endblock %}
